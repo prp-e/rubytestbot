@@ -10,11 +10,11 @@ Telegram::Bot::Client.run(token) do |bot|
 	when '/start'
 	 bot.api.sendMessage(chat_id: message.chat.id, text: "Hello, #{message.from.username}, I'm ruby test bot and made by Muhammadreza Haghiri")
 	when '/stop'
-	 bot.api.sendMessage(chat_id: message.chat.id, text : "Bye, #{message.from.username}")
+	 bot.api.sendMessage(chat_id: message.chat.id, text: "Bye, #{message.from.username}")
 	when '/help'
-	 bot.api.sendMessage(chat_id: message.chat.id, text : "Use /start, /stop and /reverse commands")
+	 bot.api.sendMessage(chat_id: message.chat.id, text: "Use /start, /stop and /reverse commands")
 	when '/reverse'
-	 bot.api.sendMessage(chat_id: message.chat.id, text : message.text[9, message.length].reverse.downcase.capitalize)
+	 bot.api.sendMessage(chat_id: message.chat.id, text: message.text[9, message.length].reverse.downcase.capitalize)
 	end
  end
 end
