@@ -15,6 +15,9 @@ Telegram::Bot::Client.run(token) do |bot|
 	 bot.api.sendMessage(chat_id: message.chat.id, text: "Use /start, /stop and /reverse commands")
 	when '/reverse'
 	 bot.api.sendMessage(chat_id: message.chat.id, text: message.text[9, message.length].reverse.downcase.capitalize)
+	 #For this, you need to give access to all messages, using /setprivacy command in BotFather
+	when '/img'
+	 bot.api.sendPhoto(chat_id: message.chat.id, photo: File.new('./img.png'))
 	end
  end
 end
